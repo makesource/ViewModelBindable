@@ -1,0 +1,6 @@
+framework module ViewModelBindable {
+  umbrella header "ViewModelBindable-umbrella.h"
+
+  export *
+  module * { export * }
+}
