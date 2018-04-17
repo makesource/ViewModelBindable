@@ -2,7 +2,7 @@ import Foundation
 
 private func swizzle(_ v: UIView.Type) {
 
-    [(#selector(v.traitCollectionDidChange(_:)), #selector(v.ksr_traitCollectionDidChange(_:)))]
+    [(#selector(v.traitCollectionDidChange(_:)), #selector(v.swizzle_traitCollectionDidChange(_:)))]
         .forEach { original, swizzled in
 
             let originalMethod = class_getInstanceMethod(v, original)
@@ -52,8 +52,8 @@ extension UIView {
             .joined(separator: ".")
     }
 
-    @objc internal func ksr_traitCollectionDidChange(_ previousTraitCollection: UITraitCollection) {
-        self.ksr_traitCollectionDidChange(previousTraitCollection)
+    @objc internal func swizzle_traitCollectionDidChange(_ previousTraitCollection: UITraitCollection) {
+        self.swizzle_traitCollectionDidChange(previousTraitCollection)
         self.bindStyles()
     }
 }

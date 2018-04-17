@@ -14,9 +14,16 @@ DEPENDENCIES:
   - RxSwift (~> 4.0.0)
   - ViewModelBindable (from `../`)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Nimble
+    - Quick
+    - RxCocoa
+    - RxSwift
+
 EXTERNAL SOURCES:
   ViewModelBindable:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
@@ -27,4 +34,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a3582741c23252ac96660894d04567ad831e8b5a
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

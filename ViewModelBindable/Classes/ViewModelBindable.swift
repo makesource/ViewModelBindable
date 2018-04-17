@@ -21,10 +21,10 @@ public protocol ViewModelBindable: class, _ObjcBindable {
 // MARK: - Default Implementations
 extension ViewModelBindable {
     public var viewModel: ViewModel? {
-        get { return objc_getAssociatedObject(self, &ViewModelAssociatedKey) as? ViewModel }
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.viewModel) as? ViewModel }
         set(newViewModel) {
             if let viewModel = newViewModel {
-                objc_setAssociatedObject(self, &ViewModelAssociatedKey, viewModel, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                objc_setAssociatedObject(self, &AssociatedKeys.viewModel, viewModel, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
                 self.isViewModelBinded = false
                 self.disposeBag = DisposeBag()
                 self.registerBinding()
@@ -42,8 +42,8 @@ extension ViewModelBindable {
     }
 
     private var isViewModelBinded: Bool {
-        get { return (objc_getAssociatedObject(self, &BindAssociatedKey) as? Bool) ?? false }
-        set { objc_setAssociatedObject(self, &BindAssociatedKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+        get { return (objc_getAssociatedObject(self, &AssociatedKeys.isViewModelBinded) as? Bool) ?? false }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.isViewModelBinded, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
     private var shouldDeferBinding: Bool {
@@ -53,10 +53,6 @@ extension ViewModelBindable {
         return false
     }
 }
-
-// MARK: - Associated Object Keys
-private var ViewModelAssociatedKey = "ViewModelAssociatedKey"
-private var BindAssociatedKey = "BindAssociatedKey"
 
 // MARK: - UIViewController extension
 extension UIViewController {

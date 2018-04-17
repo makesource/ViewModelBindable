@@ -2,8 +2,8 @@ import Foundation
 
 private func swizzle(_ vc: UIViewController.Type) {
     [
-        (#selector(vc.viewDidLoad), #selector(vc.ksr_viewDidLoad)),
-        (#selector(vc.viewWillAppear(_:)), #selector(vc.ksr_viewWillAppear(_:)))
+        (#selector(vc.viewDidLoad), #selector(vc.swizzle_viewDidLoad)),
+        (#selector(vc.viewWillAppear(_:)), #selector(vc.swizzle_viewWillAppear(_:)))
         ].forEach { original, swizzled in
 
             let originalMethod = class_getInstanceMethod(vc, original)
@@ -35,15 +35,14 @@ extension UIViewController {
         swizzle(self)
     }
 
-    @objc internal func ksr_viewDidLoad() {
-        self.ksr_viewDidLoad()
+    @objc internal func swizzle_viewDidLoad() {
+        self.swizzle_viewDidLoad()
         self.bindViewModel()
         self._viewModel_performBinding()
     }
 
-    @objc internal func ksr_viewWillAppear(_ animated: Bool) {
-        self.ksr_viewWillAppear(animated)
-
+    @objc internal func swizzle_viewWillAppear(_ animated: Bool) {
+        self.swizzle_viewWillAppear(animated)
         if !self.hasViewAppeared {
             self.bindStyles()
             self.hasViewAppeared = true
@@ -62,15 +61,9 @@ extension UIViewController {
     @objc open func bindStyles() {
     }
 
-    private struct AssociatedKeys {
-        static var hasViewAppeared = "hasViewAppeared"
-    }
-
     // Helper to figure out if the `viewWillAppear` has been called yet
     private var hasViewAppeared: Bool {
-        get {
-            return (objc_getAssociatedObject(self, &AssociatedKeys.hasViewAppeared) as? Bool) ?? false
-        }
+        get { return (objc_getAssociatedObject(self, &AssociatedKeys.hasViewAppeared) as? Bool) ?? false }
         set {
             objc_setAssociatedObject(self,
                                      &AssociatedKeys.hasViewAppeared,
