@@ -6,10 +6,6 @@
 //  Copyright © 2017 Krunoslav Zaher. All rights reserved.
 //
 
-#if DEBUG
-import Foundation
-#endif
-
 /// Sequence containing 0 or 1 elements
 public enum MaybeTrait { }
 /// Represents a push style sequence containing 0 or 1 element.
@@ -88,22 +84,12 @@ public extension PrimitiveSequenceType where TraitType == MaybeTrait {
     public func subscribe(onSuccess: ((ElementType) -> Void)? = nil,
                           onError: ((Swift.Error) -> Void)? = nil,
                           onCompleted: (() -> Void)? = nil) -> Disposable {
-        #if DEBUG
-            let callStack = Hooks.recordCallStackOnError ? Thread.callStackSymbols : []
-        #else
-            let callStack = [String]()
-        #endif
-
         return self.primitiveSequence.subscribe { event in
             switch event {
             case .success(let element):
                 onSuccess?(element)
             case .error(let error):
-                if let onError = onError {
-                    onError(error)
-                } else {
-                    Hooks.defaultErrorHandler(callStack, error)
-                }
+                onError?(error)
             case .completed:
                 onCompleted?()
             }

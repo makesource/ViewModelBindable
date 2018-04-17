@@ -34,7 +34,7 @@ public final class SerialDisposable : DisposeBase, Cancelable {
     public var disposable: Disposable {
         get {
             return _lock.calculateLocked {
-                return _current ?? Disposables.create()
+                return self.disposable
             }
         }
         set (newDisposable) {

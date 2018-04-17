@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import ViewModelBindable
 
 class ViewController: UIViewController {
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var button: UIButton!
+
+    var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +27,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension ViewController: ViewModelBindable {
+    typealias ViewModel = MainViewModel
+
+    func bindViewModel(viewModel: ViewModel) {
+        // ViewModel Inputs
+        button.rx.tap
+            .bind(to: viewModel.input)
+            .disposed(by: disposeBag)
+
+        // ViewModel Outputs
+        viewModel.text
+            .bind(to: label.rx.text)
+            .disposed(by: disposeBag)
+    }
 }
 
