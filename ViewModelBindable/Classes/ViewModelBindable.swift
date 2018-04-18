@@ -1,7 +1,5 @@
-
 import RxSwift
 import Foundation
-
 
 public protocol _ObjcBindable {
     func registerBinding()
@@ -62,7 +60,7 @@ extension ViewModelBindable {
 
 // MARK: - UIViewController extension
 extension UIViewController {
-    @objc internal func performBinding() {
+    @objc internal func bindViewModel() {
         (self as? _ObjcBindable)?.registerBinding()
     }
 
@@ -73,7 +71,7 @@ extension UIViewController {
 
 // MARK: - UIView extension
 extension UIView {
-    @objc internal func performBinding() {
+    @objc internal func bindViewModel() {
         (self as? _ObjcBindable)?.registerBinding()
     }
 

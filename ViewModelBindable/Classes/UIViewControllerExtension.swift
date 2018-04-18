@@ -3,8 +3,9 @@ import Foundation
 private func swizzle(_ vc: UIViewController.Type) {
     [
         (#selector(vc.viewDidLoad), #selector(vc.swizzle_viewDidLoad)),
-        (#selector(vc.viewWillAppear(_:)), #selector(vc.swizzle_viewWillAppear(_:)))
-        ].forEach { original, swizzled in
+        (#selector(vc.viewWillAppear(_:)), #selector(vc.swizzle_viewWillAppear(_:))),
+        (#selector(vc.traitCollectionDidChange(_:)), #selector(vc.swizzle_traitCollectionDidChange(_:)))
+    ].forEach { original, swizzled in
 
             let originalMethod = class_getInstanceMethod(vc, original)
             let swizzledMethod = class_getInstanceMethod(vc, swizzled)
@@ -28,7 +29,7 @@ private func swizzle(_ vc: UIViewController.Type) {
 private var hasSwizzled = false
 
 extension UIViewController {
-    final public class func doBadSwizzleStuff() {
+    final public class func doAwesomeSwizzleStuff() {
         guard !hasSwizzled else { return }
 
         hasSwizzled = true
@@ -37,7 +38,7 @@ extension UIViewController {
 
     @objc internal func swizzle_viewDidLoad() {
         self.swizzle_viewDidLoad()
-        self.performBinding()
+        self.bindViewModel()
     }
 
     @objc internal func swizzle_viewWillAppear(_ animated: Bool) {
@@ -46,6 +47,11 @@ extension UIViewController {
             self.bindStyles()
             self.hasViewAppeared = true
         }
+    }
+
+    @objc public func swizzle_traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        self.swizzle_traitCollectionDidChange(previousTraitCollection)
+        self.bindStyles()
     }
 
     // Helper to figure out if the `viewWillAppear` has been called yet

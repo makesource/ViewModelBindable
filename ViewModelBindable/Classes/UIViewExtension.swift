@@ -27,7 +27,7 @@ private func swizzle(_ v: UIView.Type) {
 private var hasSwizzled = false
 
 extension UIView {
-    final public class func doBadSwizzleStuff() {
+    final public class func doAwesomeSwizzleStuff() {
         guard !hasSwizzled else { return }
 
         hasSwizzled = true
@@ -36,14 +36,7 @@ extension UIView {
 
     open override func awakeFromNib() {
         super.awakeFromNib()
-        self.performBinding()
-    }
-
-    public static var defaultReusableId: String {
-        return self.description()
-            .components(separatedBy: ".")
-            .dropFirst()
-            .joined(separator: ".")
+        self.bindViewModel()
     }
 
     @objc internal func swizzle_traitCollectionDidChange(_ previousTraitCollection: UITraitCollection) {
