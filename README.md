@@ -1,7 +1,5 @@
 # ViewModelBindable
 ⚡️Super easy way to bind ViewModel
-
-## Features
 * **Easy**: Just inject ViewModel into UIView or UIViewController
 * **Powerful** : Register any type of ViewModel (include protocols) you want to bind
 
@@ -11,7 +9,7 @@ Just confrom your UIView or UIViewController to ViewModelBindable!
 ViewModelBindable offers two binding method bindViewModel(viewModel: ViewModel), bindStyles()
 
 
-1. **UIViewController**
+- **UIViewController**
 ```swift
 class DetailViewController: UIViewController {
   var disposeBag = DisposeBag()
@@ -31,7 +29,7 @@ extension DetailViewController: ViewModelBindable {
   }
 }
 ```
-2. **UIView**
+- **UIView**
 ```swift
 class DetailView: UIView {
   var disposeBag = DisposeBag()
@@ -51,6 +49,19 @@ extension DetailView: ViewModelBindable {
   }
 }
 ```
+
+## Features
+
+ViewModelBindable serves two binding methods which was used in MVVM architecture.
+
+### `bindViewModel()`
+`bindViewModel()` is used for binding between View and ViewModel.
+It will be called only once after ViewModel injection. 
+It is guaranteed that `bindViewModel()` was called after UIViewController's `viewDidLoad()`, UIView's `awakeFromNib()`. So don't be worried about IBOutlets was not initialized when binding if you use Storyboard.
+
+### `bindStyles()`
+`bindStyles()` is used for styling your views. In case ~, you have no choice but to set text or styles in swift files. ~ helps you to styles views. It will called
+
 
 ## Requirements
 
