@@ -43,5 +43,9 @@ extension MainViewController: ViewModelBindable {
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
     }
+
+    func bindStyles() {
+        button.tintColor = .red
+    }
 }
 

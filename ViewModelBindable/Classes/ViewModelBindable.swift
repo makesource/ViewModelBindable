@@ -5,6 +5,7 @@ import Foundation
 
 public protocol _ObjcBindable {
     func registerBinding()
+    func bindStyles()
 }
 
 public protocol ViewModelBindable: class, _ObjcBindable {
@@ -16,6 +17,8 @@ public protocol ViewModelBindable: class, _ObjcBindable {
     var disposeBag: DisposeBag { get set }
 
     func bindViewModel(viewModel: ViewModel)
+
+    func bindStyles()
 }
 
 // MARK: - Default Implementations
@@ -41,6 +44,9 @@ extension ViewModelBindable {
         self.isViewModelBinded = true
     }
 
+    public func bindStyles() {
+    }
+
     private var isViewModelBinded: Bool {
         get { return (objc_getAssociatedObject(self, &AssociatedKeys.isViewModelBinded) as? Bool) ?? false }
         set { objc_setAssociatedObject(self, &AssociatedKeys.isViewModelBinded, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
@@ -56,14 +62,22 @@ extension ViewModelBindable {
 
 // MARK: - UIViewController extension
 extension UIViewController {
-    @objc func _viewModel_performBinding() {
+    @objc internal func performBinding() {
         (self as? _ObjcBindable)?.registerBinding()
+    }
+
+    @objc internal func bindStyles() {
+        (self as? _ObjcBindable)?.bindStyles()
     }
 }
 
 // MARK: - UIView extension
 extension UIView {
-    @objc func _viewModel_performBinding() {
+    @objc internal func performBinding() {
         (self as? _ObjcBindable)?.registerBinding()
+    }
+
+    @objc internal func bindStyles() {
+        (self as? _ObjcBindable)?.bindStyles()
     }
 }

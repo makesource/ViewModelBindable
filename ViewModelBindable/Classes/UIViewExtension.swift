@@ -36,13 +36,7 @@ extension UIView {
 
     open override func awakeFromNib() {
         super.awakeFromNib()
-        self.bindViewModel()
-    }
-
-    @objc open func bindStyles() {
-    }
-
-    @objc open func bindViewModel() {
+        self.performBinding()
     }
 
     public static var defaultReusableId: String {

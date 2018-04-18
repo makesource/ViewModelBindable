@@ -37,8 +37,7 @@ extension UIViewController {
 
     @objc internal func swizzle_viewDidLoad() {
         self.swizzle_viewDidLoad()
-        self.bindViewModel()
-        self._viewModel_performBinding()
+        self.performBinding()
     }
 
     @objc internal func swizzle_viewWillAppear(_ animated: Bool) {
@@ -47,18 +46,6 @@ extension UIViewController {
             self.bindStyles()
             self.hasViewAppeared = true
         }
-    }
-
-    /**
-     The entry point to bind all view model outputs. Called just before `viewDidLoad`.
-     */
-    @objc open func bindViewModel() {
-    }
-
-    /**
-     The entry point to bind all styles to UI elements. Called just after `viewDidLoad`.
-     */
-    @objc open func bindStyles() {
     }
 
     // Helper to figure out if the `viewWillAppear` has been called yet
