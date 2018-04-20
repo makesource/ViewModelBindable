@@ -55,13 +55,30 @@ extension DetailView: ViewModelBindable {
 ViewModelBindable serves two binding methods which was used in MVVM architecture.
 
 ### `bindViewModel()`
+
+#### Usage
+
 `bindViewModel()` is used for binding between View and ViewModel.
-It will be called only once after ViewModel injection. 
-It is guaranteed that `bindViewModel()` was called after UIViewController's `viewDidLoad()`, UIView's `awakeFromNib()`. So don't be worried about IBOutlets was not initialized when binding if you use Storyboard.
+
+#### When is it called?
+
+Right **after** UIViewController's `viewDidLoad()`, UIView's `awakeFromNib()`
+ 
+You can initialize some stuffs in viewDidLoad to prepare binding if you use storyboard
+
 
 ### `bindStyles()`
-`bindStyles()` is used for styling your views. In case ~, you have no choice but to set text or styles in swift files. ~ helps you to styles views. It will called
 
+#### Usage
+
+`bindStyles()` is used for styling your views. In case your app support multiple languages, you have no choice but to set text or styles in swift files. 
+
+#### When is it called?
+
+Right **before** UIViewController's initial `viewWillAppear(_:)` called, each time `traitCollectionDidChange(_:)` called.
+UIView's `awakeFromNib()`
+ 
+You can initialize some stuffs before binding if you use Storyboard instantitated ViewController
 
 ## Requirements
 
