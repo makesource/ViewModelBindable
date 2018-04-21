@@ -1,7 +1,19 @@
 # ViewModelBindable
 ⚡️Super easy way to bind ViewModel
-* **Easy**: Just inject ViewModel into UIView or UIViewController
-* **Powerful** : Register any type of ViewModel (include protocols) you want to bind
+
+1. typealias your ViewModel which you want to inject
+```swift
+typealias ViewModel = DetailViewModel
+```
+
+2. Inject viewModel
+```swift
+let vc = UIViewController()
+let viewModel = DetailViewModel()
+vc.viewModel = viewModel
+```
+
+3. ViewModelBindable will call bindViewModel(_:), bindStyles(). Just use it!
 
 ## Usages
 Just confrom your UIView or UIViewController to ViewModelBindable!
@@ -82,9 +94,12 @@ You can initialize some stuffs in viewDidLoad / awakeFromNib to prepare binding 
 #### When is it called?
 
 Right **before** UIViewController's initial `viewWillAppear(_:)` call and each time `traitCollectionDidChange(_:)` call
-UIView's `awakeFromNib()`
  
 Right **before** each time UIView's `traitCollectionDidChange(_:)` call
+
+## Dependency
+
+- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 4.0.0)
 
 ## Requirements
 
