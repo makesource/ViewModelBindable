@@ -8,12 +8,12 @@ typealias ViewModel = DetailViewModel
 
 2. Inject viewModel
 ```swift
-let vc = UIViewController()
+let viewController = DetailViewController()
 let viewModel = DetailViewModel()
-vc.viewModel = viewModel
+viewController.viewModel = viewModel
 ```
 
-3. ViewModelBindable will call bindViewModel(_:), bindStyles(). Just use it!
+3. Just enjoy `bindViewModel(_:)`, `bindStyles()` <br/> This will be called automatically!
 
 ## Usages
 Just confrom your UIView or UIViewController to ViewModelBindable!
@@ -85,7 +85,7 @@ You can initialize some stuffs in viewDidLoad / awakeFromNib to prepare binding 
 
 #### Usage
 
-`bindStyles()` is used for styling your views. This method is optional. So you don't need to implement it.
+`bindStyles()` is used for styling your views. This method is optional. So implement it if you need.
 
 - If your app support localized text or images, then styling it in 'bindStyles()'
 - If your app support theme-based design that depends on user setting
