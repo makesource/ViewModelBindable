@@ -5,7 +5,7 @@
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
-@version = '0.1.0'
+@version = '1.0.0'
 
 Pod::Spec.new do |s|
   s.name             = 'ViewModelBindable'
@@ -25,11 +25,11 @@ ViewModelBindable supports easy ViewModel binding for MVVM architecture. ViewMod
   s.homepage         = 'https://github.com/makesource/ViewModelBindable'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'makesource' => 'makesource@gmail.com' }
-  s.source           = { :git => 'https://github.com/makesource/ViewModelBindable.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/makesource/ViewModelBindable.git', :tag => 'v#{s.version}' }
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'ViewModelBindable/Classes/**/*'
   # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency "RxSwift", ">= 4.0.0"
+  s.dependency 'RxSwift', '>= 4.0.0'
 end
