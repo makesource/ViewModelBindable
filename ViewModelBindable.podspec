@@ -25,7 +25,7 @@ ViewModelBindable supports easy ViewModel binding for MVVM architecture. ViewMod
   s.homepage         = 'https://github.com/makesource/ViewModelBindable'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'makesource' => 'makesource@gmail.com' }
-  s.source           = { :git => 'https://github.com/makesource/ViewModelBindable.git', :tag => 'v#{s.version}' }
+  s.source           = { :git => 'https://github.com/makesource/ViewModelBindable.git', :tag => "v#{s.version}" }
 
   s.ios.deployment_target = '8.0'
 
