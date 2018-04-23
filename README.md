@@ -76,7 +76,16 @@ ViewModelBindable serves two binding methods which was used in MVVM architecture
 
 Right **after** UIViewController's `viewDidLoad()`
 
-Right **after** UIView's `awakeFromNib()`
+Right **after** UIView's viewModel injection
+
+It's recommended to bind UIView's viewModel in ViewController's bindViewModel(_:) method 
+
+```swift
+func bindViewModel(viewModle: ViewModel) {
+  headerView.viewModel = viewModel
+  footerView.viewModel = viewModel
+}
+```
  
 You can initialize some stuffs in viewDidLoad / awakeFromNib to prepare binding if you use storyboard
 
