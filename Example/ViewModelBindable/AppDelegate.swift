@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if let vc = self.window?.rootViewController as? MainViewController {
-            // Inject ViewModel
-            vc.viewModel = MainViewModel()
-        }
         return true
     }
 

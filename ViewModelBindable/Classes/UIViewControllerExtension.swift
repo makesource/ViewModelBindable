@@ -65,10 +65,7 @@ extension UIViewController {
 
     @objc internal func swizzle_viewDidLoad() {
         self.swizzle_viewDidLoad()
-
-        DispatchQueue.main.async {
-            self.bindViewModel()
-        }
+        DispatchQueue.main.async { self.bindViewModel() }
     }
 
     @objc internal func swizzle_viewWillAppear(_ animated: Bool) {

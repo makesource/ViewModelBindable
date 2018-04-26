@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  LabelViewController.swift
 //  ViewModelBindable
 //
 //  Created by makesource on 04/16/2018.
@@ -11,9 +11,10 @@ import RxSwift
 import RxCocoa
 import ViewModelBindable
 
-class MainViewController: UIViewController {
+class LabelViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var sampleView: SampleView!
 
     var disposeBag = DisposeBag()
 
@@ -29,8 +30,8 @@ class MainViewController: UIViewController {
 
 }
 
-extension MainViewController: ViewModelBindable {
-    typealias ViewModel = MainViewModel
+extension LabelViewController: ViewModelBindable {
+    typealias ViewModel = LabelViewModel
 
     func bindViewModel(viewModel: ViewModel) {
         // ViewModel Inputs

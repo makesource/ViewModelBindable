@@ -61,11 +61,6 @@ extension UIView {
         swizzle(self)
     }
 
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        self.bindViewModel()
-    }
-
     @objc internal func swizzle_traitCollectionDidChange(_ previousTraitCollection: UITraitCollection) {
         self.swizzle_traitCollectionDidChange(previousTraitCollection)
         self.bindStyles()

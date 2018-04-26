@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  LabelViewModel.swift
 //  ViewModelBindable_Example
 //
 //  Created by 방성원 on 2018. 4. 17..
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-final class MainViewModel {
+final class LabelViewModel {
     // input
     let input = PublishSubject<Void>()
 
