@@ -1,8 +1,8 @@
 {
   "name": "ViewModelBindable",
-  "version": "0.1.0",
-  "summary": "A short description of ViewModelBindable.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "1.0.0",
+  "summary": "Super easy way to bind ViewModel",
+  "description": "ViewModelBindable supports easy ViewModel binding for MVVM architecture. ViewModelBindable will inject required method for binding into your ViewController & View life-cycle. Just enjoy it!",
   "homepage": "https://github.com/makesource/ViewModelBindable",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/makesource/ViewModelBindable.git",
-    "tag": "0.1.0"
+    "tag": "v1.0.0"
   },
   "platforms": {
     "ios": "8.0"

@@ -1,24 +1,32 @@
 PODS:
+  - Differentiator (3.0.2)
   - Nimble (7.0.3)
   - Quick (1.2.0)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
+  - RxDataSources (3.0.2):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
-  - ViewModelBindable (0.1.0):
+  - ViewModelBindable (1.0.0):
     - RxSwift (>= 4.0.0)
 
 DEPENDENCIES:
   - Nimble (~> 7.0.2)
   - Quick (~> 1.2.0)
   - RxCocoa (~> 4.0.0)
+  - RxDataSources (~> 3.0)
   - RxSwift (~> 4.0.0)
   - ViewModelBindable (from `../`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Differentiator
     - Nimble
     - Quick
     - RxCocoa
+    - RxDataSources
     - RxSwift
 
 EXTERNAL SOURCES:
@@ -26,12 +34,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
-  ViewModelBindable: 06b90b5da700d6299b42a62593de5a84f2d45ef6
+  ViewModelBindable: aca57fad5f4427c8c6e78d6a52609bbfee85c67c
 
-PODFILE CHECKSUM: a3582741c23252ac96660894d04567ad831e8b5a
+PODFILE CHECKSUM: 77e8ae6bfa15f32ce88bc1aa3bcc936ac11707de
 
 COCOAPODS: 1.5.0
