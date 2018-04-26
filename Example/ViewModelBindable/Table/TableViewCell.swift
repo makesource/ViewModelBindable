@@ -1,5 +1,5 @@
 //
-//  TableViewModel.swift
+//  TableViewCell.swift
 //  ViewModelBindable_Example
 //
 //  Created by 방성원 on 2018. 4. 26..
@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
-final class TableViewModel {
+class TableViewCell: UITableViewCell {
 }
+

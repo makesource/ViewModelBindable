@@ -12,9 +12,11 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewControllers?.forEach {
-            if let vc = $0 as? LabelViewController {
+            let arg = ($0 as? UINavigationController)?.viewControllers.first
+
+            if let vc = arg as? LabelViewController {
                 vc.viewModel = LabelViewModel()
-            } else if let vc = $0 as? TableViewController {
+            } else if let vc = arg as? TableViewController {
                 vc.viewModel = TableViewModel()
             }
         }

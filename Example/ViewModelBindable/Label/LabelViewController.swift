@@ -14,7 +14,6 @@ import ViewModelBindable
 class LabelViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var sampleView: SampleView!
 
     var disposeBag = DisposeBag()
 
