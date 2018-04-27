@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0B39657DF0EEE6DB62A0F91B /* Pods_ViewModelBindable_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E60A5CBCB72FB6755AB928 /* Pods_ViewModelBindable_Tests.framework */; };
+		14A81AAA2092BE1600DE09D0 /* LabelTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A81AA92092BE1600DE09D0 /* LabelTableCellViewModel.swift */; };
 		14D4E8DB2091C77700C7B851 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4E8DA2091C77700C7B851 /* MainTabBarController.swift */; };
 		14D4E8DD2091D10A00C7B851 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4E8DC2091D10A00C7B851 /* TableViewController.swift */; };
 		14D4E8DF2091D14600C7B851 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4E8DE2091D14600C7B851 /* TableViewModel.swift */; };
-		14D4E8E42091D5A500C7B851 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D4E8E32091D5A500C7B851 /* TableViewCell.xib */; };
-		14D4E8E62091D5B200C7B851 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4E8E52091D5B200C7B851 /* TableViewCell.swift */; };
+		14D4E8E42091D5A500C7B851 /* LabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D4E8E32091D5A500C7B851 /* LabelTableViewCell.xib */; };
+		14D4E8E62091D5B200C7B851 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D4E8E52091D5B200C7B851 /* LabelTableViewCell.swift */; };
 		14F5C96C2085C81B00EA3E58 /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5C96B2085C81B00EA3E58 /* LabelViewModel.swift */; };
 		568C6962DDF452673A693008 /* Pods_ViewModelBindable_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3E2803C3CF53581915E8A6 /* Pods_ViewModelBindable_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -36,11 +37,12 @@
 /* Begin PBXFileReference section */
 		0AF3733DCEC05D72593FA0D1 /* Pods-ViewModelBindable_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewModelBindable_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViewModelBindable_Tests/Pods-ViewModelBindable_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		144E6100B8D99165A2B70B3E /* Pods-ViewModelBindable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewModelBindable_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViewModelBindable_Example/Pods-ViewModelBindable_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		14A81AA92092BE1600DE09D0 /* LabelTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableCellViewModel.swift; sourceTree = "<group>"; };
 		14D4E8DA2091C77700C7B851 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		14D4E8DC2091D10A00C7B851 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		14D4E8DE2091D14600C7B851 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
-		14D4E8E32091D5A500C7B851 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		14D4E8E52091D5B200C7B851 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		14D4E8E32091D5A500C7B851 /* LabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelTableViewCell.xib; sourceTree = "<group>"; };
+		14D4E8E52091D5B200C7B851 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		14F5C96B2085C81B00EA3E58 /* LabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ViewModelBindable_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewModelBindable_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147ACD792092BCA0003550F4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				14A81AA92092BE1600DE09D0 /* LabelTableCellViewModel.swift */,
+				14D4E8E52091D5B200C7B851 /* LabelTableViewCell.swift */,
+				14D4E8E32091D5A500C7B851 /* LabelTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		14D4E8E12091D58400C7B851 /* Label */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,10 +105,9 @@
 		14D4E8E22091D58E00C7B851 /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				147ACD792092BCA0003550F4 /* Cell */,
 				14D4E8DC2091D10A00C7B851 /* TableViewController.swift */,
 				14D4E8DE2091D14600C7B851 /* TableViewModel.swift */,
-				14D4E8E52091D5B200C7B851 /* TableViewCell.swift */,
-				14D4E8E32091D5A500C7B851 /* TableViewCell.xib */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -136,8 +147,8 @@
 			children = (
 				14D4E8E22091D58E00C7B851 /* Table */,
 				14D4E8E12091D58400C7B851 /* Label */,
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				14D4E8DA2091C77700C7B851 /* MainTabBarController.swift */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -281,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				14D4E8E42091D5A500C7B851 /* TableViewCell.xib in Resources */,
+				14D4E8E42091D5A500C7B851 /* LabelTableViewCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -389,9 +400,10 @@
 				14D4E8DF2091D14600C7B851 /* TableViewModel.swift in Sources */,
 				14D4E8DD2091D10A00C7B851 /* TableViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* LabelViewController.swift in Sources */,
+				14A81AAA2092BE1600DE09D0 /* LabelTableCellViewModel.swift in Sources */,
 				14D4E8DB2091C77700C7B851 /* MainTabBarController.swift in Sources */,
 				14F5C96C2085C81B00EA3E58 /* LabelViewModel.swift in Sources */,
-				14D4E8E62091D5B200C7B851 /* TableViewCell.swift in Sources */,
+				14D4E8E62091D5B200C7B851 /* LabelTableViewCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,13 +22,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oeU-pN-6nO">
-                                <rect key="frame" x="67" y="183" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oeU-pN-6nO">
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oeU-pN-6nO" firstAttribute="top" secondItem="w5H-Zb-Dah" secondAttribute="bottom" id="KKN-L2-gfK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oeU-pN-6nO" secondAttribute="trailing" id="jnp-Jq-Kjl"/>
+                            <constraint firstItem="VKf-ub-WN5" firstAttribute="top" secondItem="oeU-pN-6nO" secondAttribute="bottom" id="leT-EL-ffD"/>
+                            <constraint firstItem="oeU-pN-6nO" firstAttribute="leading" secondItem="Ide-FD-bed" secondAttribute="leadingMargin" id="tzr-C8-9cA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Table" id="lx9-nq-2gq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="woB-wH-ncI"/>
@@ -103,11 +109,11 @@
             </objects>
             <point key="canvasLocation" x="-907" y="150"/>
         </scene>
-        <!--Item 1-->
+        <!--Label-->
         <scene sceneID="QrQ-TV-BDJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hu5-CL-ziR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="X1j-Tk-YTc"/>
+                    <tabBarItem key="tabBarItem" title="Label" id="X1j-Tk-YTc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wH8-8C-HAJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -122,11 +128,11 @@
             </objects>
             <point key="canvasLocation" x="44.799999999999997" y="-182.60869565217394"/>
         </scene>
-        <!--Item 2-->
+        <!--Table-->
         <scene sceneID="4We-0h-Zgt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k3h-U1-lF3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="3C1-DT-kmP"/>
+                    <tabBarItem key="tabBarItem" title="Table" id="3C1-DT-kmP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z7l-0D-JPv">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

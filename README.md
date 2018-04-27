@@ -81,7 +81,7 @@ Right **after** UIView's viewModel injection
 It's recommended to bind UIView's viewModel in ViewController's bindViewModel(_:) method 
 
 ```swift
-func bindViewModel(viewModle: ViewModel) {
+func bindViewModel(viewModel: ViewModel) {
   headerView.viewModel = viewModel
   footerView.viewModel = viewModel
 }

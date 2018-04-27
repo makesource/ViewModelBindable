@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Wvv-Ko-FNE" customClass="TableViewCell" customModule="ViewModelBindable_Example" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelTableViewCell" id="Wvv-Ko-FNE" customClass="LabelTableViewCell" customModule="ViewModelBindable_Example" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wvv-Ko-FNE" id="n9y-Q8-OFX">
@@ -33,6 +33,9 @@
                     <constraint firstItem="h1d-ZO-J7i" firstAttribute="top" secondItem="n9y-Q8-OFX" secondAttribute="topMargin" id="txe-15-CUV"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="label" destination="h1d-ZO-J7i" id="kNc-Qr-RRT"/>
+            </connections>
             <point key="canvasLocation" x="61" y="-400"/>
         </tableViewCell>
     </objects>

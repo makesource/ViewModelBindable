@@ -19,13 +19,7 @@ class TableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        tableView.register(UINib(nibName: "LabelTableViewCell", bundle: nil), forCellReuseIdentifier: "LabelTableViewCell")
     }
 }
 
@@ -34,10 +28,12 @@ extension TableViewController: ViewModelBindable {
    typealias ViewModel = TableViewModel
 
     func bindViewModel(viewModel: ViewModel) {
+        // ViewModel Inputs
         addBarButton.rx.tap
             .bind(to: viewModel.addButtonClicked)
             .disposed(by: disposeBag)
 
+        // ViewModel Outputs
         let dataSource = configureDataSource(viewModel: viewModel)
         viewModel.dataSources
             .bind(to: tableView.rx.items(dataSource: dataSource))
@@ -47,18 +43,9 @@ extension TableViewController: ViewModelBindable {
     private func configureDataSource(viewModel: ViewModel) -> RxTableViewSectionedReloadDataSource<SectionModel<String, String>> {
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(
             configureCell: { (_, tv, ip, text: String) in
-                return UITableViewCell()
-//                switch model {
-//                case .webtoon(let webtoon):
-//                    let cell: WebtoonRankingTableViewCell = tv.dequeueReusableCell(forIndexPath: ip)
-//                    let ranking = ip.row > 3 && hasInterstitial ? ip.row : ip.row + 1
-//                    cell.configure(webtoon, ranking: ranking)
-//                    return cell
-//                case .interstitial:
-//                    let cell: InterstitialTableViewCell = tv.dequeueReusableCell(forIndexPath: ip)
-//                    cell.configure(bannerView: bannerView)
-//                    return cell
-//                }
+                let cell: LabelTableViewCell = tv.dequeueReusableCell(withIdentifier: "LabelTableViewCell", for: ip) as! LabelTableViewCell
+                cell.viewModel = LabelTableCellViewModel(text)
+                return cell
             }
         )
         return dataSource

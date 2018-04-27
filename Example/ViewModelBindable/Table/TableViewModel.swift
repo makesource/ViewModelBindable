@@ -24,7 +24,6 @@ final class TableViewModel {
         let numberObservable = addButtonClicked
             .map { 1 }
             .scan(0) { $0 + $1 }
-            .startWith(0)
             .map { "\($0)-th item" }
 
         let items = numberObservable
